@@ -3,11 +3,21 @@
  *
  * Напишите функцию primes(n). Её единственный аргумент — целое число n.
  * Функция должна возвращать массив простых чисел от 2 до n.
- * 
-*/
+ *
+ */
 
 function primes(num) {
-    // Напишите код здесь
+  const primesArr = [];
+
+  nextNum: for (let i = 2; i <= num; i++) {
+    for (let j = 2; j < i; j++) {
+      if (i % j === 0) {
+        continue nextNum;
+      }
+    }
+    primesArr.push(i);
+  }
+  return primesArr;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
