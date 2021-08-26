@@ -6,16 +6,19 @@
  *
  */
 
+function isPrime(n) {
+  let isPrime = true;
+  if (n === 1 || n === 0) isPrime = false;
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) isPrime = false;
+  }
+  return isPrime;
+}
+
 function primes(num) {
   const primesArr = [];
-
-  nextNum: for (let i = 2; i <= num; i++) {
-    for (let j = 2; j < i; j++) {
-      if (i % j === 0) {
-        continue nextNum;
-      }
-    }
-    primesArr.push(i);
+  for (let i = 2; i <= num; i++) {
+    if (isPrime(i)) primesArr.push(i);
   }
   return primesArr;
 }

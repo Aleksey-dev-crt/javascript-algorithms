@@ -10,7 +10,7 @@
 
 function sumOfTwo(arr, sum) {
   for (let i = 0; i <= arr.length; i++) {
-    if (arr[0] + arr[i] === sum) {
+    if ((arr[0] + arr[i] === sum) || (arr[i] + arr[i+1] === sum)) {
       return true;
     }
   }
@@ -21,3 +21,4 @@ function sumOfTwo(arr, sum) {
 
 console.log(sumOfTwo([1, 2, 3, 4, 5], 4)); // true (так как 1 + 3 === 4)
 console.log(sumOfTwo([1, 2, 3, 4, 5], 100)); // false
+console.log(sumOfTwo([1, 2, 3, 4, 5], 9)); // true

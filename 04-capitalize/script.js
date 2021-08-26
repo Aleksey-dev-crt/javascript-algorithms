@@ -7,18 +7,15 @@
  */
 
 function capitalize(str) {
-  if (str === "" || str === " ") {
-    return "";
-  }
   const arr = str.split(" ");
   const newArr = [];
   arr.forEach((element) => {
-    element = element[0].toUpperCase() + element.slice(1);
+    element = element.charAt(0).toUpperCase() + element.slice(1);
     newArr.push(element);
   });
-  return (newStr = newArr.join(" "));
+  return newArr.join(" ");
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-console.log(capitalize("молодость всё Простит")); // "Молодость Всё Простит"
+console.log(capitalize("молодость всё простит")); // "Молодость Всё Простит"

@@ -9,17 +9,13 @@
  * если n простое, и false — если нет.
  */
 
-function isPrime(n) {
-  if (n === 0 || n === 1) {
-    return false;
-  } else if (n === 2) {
-    return true;
-  }
-  for (let i = 2; i <= n; i++) {
-    if (n % i === 0) {
-      return false;
-    } else return true;
-  }
+function isPrime(n) {  
+  let isPrime = true
+  if ((n === 1) || (n === 0)) isPrime = false
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) isPrime = false
+  } 
+  return isPrime
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
@@ -29,3 +25,4 @@ console.log(isPrime(1)); // false
 console.log(isPrime(3)); // true
 console.log(isPrime(6)); // false
 console.log(isPrime(17)); // true
+console.log(isPrime(121)); // false
